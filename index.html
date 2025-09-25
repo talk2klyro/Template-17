@@ -1,221 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Balloon Sky – Viral Shared Experience Platform</title>
-
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-<style>
-  body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to top, #a0e9ff, #f9faff);
-    overflow-x: hidden;
-    min-height: 100vh;
-  }
-
-  header {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 50;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
-
-  header .logo {
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #ff5a5f;
-  }
-
-  header nav a {
-    margin-left: 1.5rem;
-    font-weight: 500;
-    color: #111;
-    transition: 0.3s;
-  }
-
-  header nav a:hover { color: #ff5a5f; }
-
-  /* Hero Sky */
-  .hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-    padding-top: 4rem;
-  }
-
-  .hero h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #ff5a5f;
-    margin-bottom: 1rem;
-  }
-
-  .hero p {
-    font-size: 1.25rem;
-    color: #555;
-    margin-bottom: 2rem;
-  }
-
-  .btn-primary {
-    background: #ff5a5f;
-    color: white;
-    font-weight: 600;
-    padding: 0.75rem 2rem;
-    border-radius: 9999px;
-    transition: 0.3s;
-  }
-  .btn-primary:hover {
-    background: #ff7982;
-    transform: scale(1.05);
-  }
-
-  /* Sky Objects */
-  .sky-object {
-    position: absolute;
-    width: 50px;
-    height: 70px;
-    background: radial-gradient(circle at 30% 30%, #ff5a5f, #ffa07a);
-    border-radius: 50% 50% 50% 50%;
-    animation: floatUp 15s linear infinite;
-  }
-
-  @keyframes floatUp {
-    0% { transform: translateY(100vh) translateX(0) rotate(0deg); }
-    50% { transform: translateY(50vh) translateX(30px) rotate(15deg); }
-    100% { transform: translateY(-20vh) translateX(0) rotate(-10deg); }
-  }
-
-  /* Features Section */
-  section.features {
-    padding: 6rem 2rem;
-    background: white;
-    clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0% 100%);
-  }
-
-  section.features h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #ff5a5f;
-    margin-bottom: 3rem;
-  }
-
-  .feature-card {
-    background: #fef3f3;
-    padding: 2rem;
-    border-radius: 1rem;
-    text-align: center;
-    transition: transform 0.5s, box-shadow 0.5s;
-  }
-  .feature-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-  }
-
-  .feature-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: #ff5a5f; }
-  .feature-card p { color: #555; font-size: 0.95rem; }
-
-  /* Viral Invite Section */
-  section.invite {
-    padding: 6rem 2rem;
-    background: linear-gradient(to right, #ff5a5f, #ffa07a);
-    color: white;
-    text-align: center;
-    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 95%);
-  }
-
-  section.invite h2 { font-size: 2.25rem; font-weight: 700; margin-bottom: 1.5rem; }
-  section.invite a { font-weight: 600; padding: 0.75rem 2rem; border-radius: 9999px; background: white; color: #ff5a5f; transition: 0.3s; }
-  section.invite a:hover { background: #ffe0e0; transform: scale(1.05); }
-
-  /* Footer */
-  footer { background: #111; color: #aaa; text-align: center; padding: 2rem 1rem; font-size: 0.85rem; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom & Co. — Premium Small Business</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    .wave-top {
+      clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
+    }
+    .wave-bottom {
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+    }
+    .split-section img {
+      object-fit: cover;
+    }
+  </style>
 </head>
-<body>
+<body class="bg-gray-50 font-inter">
 
-<header>
-  <div class="logo">Balloon Sky</div>
-  <nav>
-    <a href="#features">Features</a>
-    <a href="#invite">Join Now</a>
-  </nav>
-</header>
+  <!-- HERO -->
+  <section class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white h-screen flex flex-col justify-center items-center text-center relative">
+    <h1 class="text-5xl font-bold mb-4">Bloom & Co.</h1>
+    <p class="mb-8 text-lg">Innovative solutions for small businesses and startups</p>
+    <a href="#services" class="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition">Explore Services</a>
+    <div class="wave-bottom absolute bottom-0 w-full h-32 bg-white"></div>
+  </section>
 
-<!-- HERO SECTION -->
-<section class="hero">
-  <h1>🎈 Welcome to Balloon Sky</h1>
-  <p>An interactive viral sky where you float as a balloon, star, or kite!</p>
-  <a href="#invite" class="btn-primary">Join the Sky</a>
+  <!-- SERVICES -->
+  <section id="services" class="bg-white py-20 wave-top">
+    <h2 class="text-4xl text-center font-bold text-indigo-600 mb-16">Our Services</h2>
+    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto px-6">
+      <div class="bg-indigo-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="font-semibold text-xl mb-3">Consulting</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac lacus eget sapien fermentum posuere.</p>
+      </div>
+      <div class="bg-indigo-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="font-semibold text-xl mb-3">Brand Strategy</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac lacus eget sapien fermentum posuere.</p>
+      </div>
+      <div class="bg-indigo-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="font-semibold text-xl mb-3">Marketing & Social Media</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac lacus eget sapien fermentum posuere.</p>
+      </div>
+    </div>
+  </section>
 
-  <!-- Sky objects -->
-  <div class="sky-object" style="left: 10%; animation-delay: 0s;"></div>
-  <div class="sky-object" style="left: 25%; animation-delay: 2s;"></div>
-  <div class="sky-object" style="left: 40%; animation-delay: 4s;"></div>
-  <div class="sky-object" style="left: 60%; animation-delay: 1s;"></div>
-  <div class="sky-object" style="left: 75%; animation-delay: 3s;"></div>
-  <div class="sky-object" style="left: 90%; animation-delay: 5s;"></div>
-</section>
+  <!-- SPLIT / FEATURE -->
+  <section class="split-section flex flex-col md:flex-row items-center max-w-6xl mx-auto px-6 py-24 gap-12">
+    <div class="md:w-1/2">
+      <img src="https://via.placeholder.com/600x400" alt="Feature Image" class="rounded-xl shadow-lg w-full">
+    </div>
+    <div class="md:w-1/2">
+      <h2 class="text-3xl font-bold text-indigo-600 mb-4">Why Choose Us?</h2>
+      <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et urna nec justo dictum ullamcorper.</p>
+      <ul class="list-disc list-inside text-gray-700 space-y-2">
+        <li>Professional and dedicated team</li>
+        <li>Custom solutions tailored to your business</li>
+        <li>Proven results and satisfied clients</li>
+      </ul>
+    </div>
+  </section>
 
-<!-- FEATURES SECTION -->
-<section class="features" id="features">
-  <h2>Core Features</h2>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-    <div class="feature-card">
-      <h3>Interactive Sky Objects</h3>
-      <p>Become a balloon, star, or kite floating gently in the sky.</p>
+  <!-- PRODUCTS / CARDS -->
+  <section class="bg-gray-50 py-20">
+    <h2 class="text-4xl text-center font-bold text-indigo-600 mb-16">Featured Products</h2>
+    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto px-6">
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
+        <img src="https://via.placeholder.com/400x250" alt="Product 1" class="mb-4 rounded">
+        <h3 class="font-semibold text-xl mb-2">Product One</h3>
+        <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a href="#" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-500 transition">Buy Now</a>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
+        <img src="https://via.placeholder.com/400x250" alt="Product 2" class="mb-4 rounded">
+        <h3 class="font-semibold text-xl mb-2">Product Two</h3>
+        <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a href="#" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-500 transition">Buy Now</a>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
+        <img src="https://via.placeholder.com/400x250" alt="Product 3" class="mb-4 rounded">
+        <h3 class="font-semibold text-xl mb-2">Product Three</h3>
+        <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a href="#" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-500 transition">Buy Now</a>
+      </div>
     </div>
-    <div class="feature-card">
-      <h3>Joyful Celebrations</h3>
-      <p>Confetti bursts and animated snackbars appear for new friends.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Viral Invite Links</h3>
-      <p>Share your unique link and invite friends to join your sky.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Reward & Achievements</h3>
-      <p>Unlock badges, rainbow trails, and milestones as more friends join.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Immersive Environment</h3>
-      <p>Dynamic clouds and animated backgrounds for a calming atmosphere.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Marketing Consent Flow</h3>
-      <p>Users can opt-in for profile & email updates for future engagement.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- VIRAL INVITE SECTION -->
-<section class="invite" id="invite">
-  <h2>Join the Sky Now!</h2>
-  <p>Invite your friends, unlock fun badges, and rise together!</p>
-  <a href="https://yourapp.com/signup" target="_blank">🎉 Sign Up</a>
-</section>
+  <!-- CONTACT -->
+  <section id="contact" class="bg-white py-20">
+    <h2 class="text-4xl text-center font-bold text-indigo-600 mb-12">Contact Us</h2>
+    <form class="max-w-2xl mx-auto px-6 flex flex-col gap-6">
+      <input type="text" placeholder="Your Name" class="p-4 border rounded-lg w-full focus:ring-2 focus:ring-indigo-500">
+      <input type="email" placeholder="Your Email" class="p-4 border rounded-lg w-full focus:ring-2 focus:ring-indigo-500">
+      <textarea placeholder="Message" class="p-4 border rounded-lg w-full focus:ring-2 focus:ring-indigo-500"></textarea>
+      <button type="submit" class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-500 transition">Send Message</button>
+    </form>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  © 2025 Balloon Sky — Interactive Viral Experience Platform
-</footer>
+  <!-- FOOTER -->
+  <footer class="bg-gray-100 py-8 text-center text-gray-600">
+    <p>© <span id="year"></span> Bloom & Co. — All Rights Reserved</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 
 </body>
-  </html>
+      </html>
