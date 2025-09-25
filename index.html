@@ -1,157 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tier 3 Business Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tier 3 Pro Business Template</title>
+
+<!-- TailwindCSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; background: #f0f4f8; }
   
-  <!-- TailwindCSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  /* Wave / diagonal shapes */
+  .wave-top { clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+  .wave-bottom { clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%); }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  /* Floating 3D Cards */
+  .card {
+    transition: transform 0.5s, box-shadow 0.5s;
+    transform-style: preserve-3d;
+  }
+  .card:hover {
+    transform: rotateY(10deg) rotateX(5deg) scale(1.05);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+  }
 
-  <style>
-    body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-    
-    /* Wave / diagonal shapes */
-    .wave-top {
-      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    }
-    .wave-bottom {
-      clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
-    }
+  /* Parallax Layers */
+  .parallax {
+    transform: translateZ(0);
+    will-change: transform;
+  }
 
-    /* Floating cards */
-    .card { 
-      transition: transform 0.4s, box-shadow 0.4s; 
-    }
-    .card:hover { 
-      transform: translateY(-10px) scale(1.02); 
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    }
+  /* Fade-in on scroll */
+  .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-    /* Parallax */
-    .parallax {
-      transform: translateZ(0);
-      will-change: transform;
-    }
-
-    /* Scroll fade-in animation */
-    .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
-  </style>
+  /* Animated Counters */
+  .counter { font-weight: 700; color: #2563eb; font-size: 2rem; }
+</style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-  <!-- HERO -->
-  <section class="relative h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
-    <div class="text-center space-y-4">
-      <h1 class="text-5xl md:text-6xl font-bold animate-bounce">Welcome to Your Business</h1>
-      <p class="text-xl md:text-2xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <a href="#services" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Explore Services</a>
-    </div>
-  </section>
+<!-- HERO SECTION -->
+<section class="relative h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white overflow-hidden">
+  <div class="text-center space-y-4">
+    <h1 class="text-5xl md:text-6xl font-bold animate-bounce">Welcome to Your Business</h1>
+    <p class="text-xl md:text-2xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <a href="#services" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Explore Services</a>
+  </div>
+  <!-- Parallax floating circles -->
+  <div class="absolute w-48 h-48 bg-white opacity-20 rounded-full -top-20 -left-20 parallax"></div>
+  <div class="absolute w-32 h-32 bg-indigo-300 opacity-30 rounded-full -bottom-16 -right-10 parallax"></div>
+</section>
 
-  <!-- WAVE SECTION -->
-  <section class="wave-top bg-white relative z-10 py-20" id="services">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold text-gray-800 mb-12">Our Services</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="card bg-gray-100 p-6 rounded-xl fade-in">
-          <h3 class="text-xl font-semibold mb-2">Service One</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        <div class="card bg-gray-100 p-6 rounded-xl fade-in">
-          <h3 class="text-xl font-semibold mb-2">Service Two</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        <div class="card bg-gray-100 p-6 rounded-xl fade-in">
-          <h3 class="text-xl font-semibold mb-2">Service Three</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
+<!-- SERVICES SECTION -->
+<section class="wave-top bg-white py-20" id="services">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold text-gray-800 mb-12">Our Services</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="card bg-gray-100 p-6 rounded-xl fade-in">
+        <h3 class="text-xl font-semibold mb-2">Service One</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="card bg-gray-100 p-6 rounded-xl fade-in">
+        <h3 class="text-xl font-semibold mb-2">Service Two</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="card bg-gray-100 p-6 rounded-xl fade-in">
+        <h3 class="text-xl font-semibold mb-2">Service Three</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
     </div>
-    <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-white to-transparent"></div>
-  </section>
+  </div>
+</section>
 
-  <!-- SPLIT SCREEN -->
-  <section class="flex flex-col md:flex-row items-center py-20 px-6 max-w-6xl mx-auto">
-    <div class="md:w-1/2 md:pr-12 fade-in">
-      <h2 class="text-4xl font-bold mb-6">About Our Company</h2>
-      <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec est id libero viverra scelerisque. Aliquam erat volutpat.</p>
-      <p class="text-gray-700">Fusce faucibus tellus vitae lectus porta, ac pharetra augue bibendum. Integer eget ex in eros malesuada.</p>
-    </div>
-    <div class="md:w-1/2 mt-8 md:mt-0 fade-in">
-      <img src="https://via.placeholder.com/500x350" alt="About image" class="rounded-xl shadow-lg parallax">
-    </div>
-  </section>
+<!-- SPLIT SCREEN -->
+<section class="flex flex-col md:flex-row items-center py-20 px-6 max-w-6xl mx-auto">
+  <div class="md:w-1/2 md:pr-12 fade-in">
+    <h2 class="text-4xl font-bold mb-6">About Our Company</h2>
+    <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec est id libero viverra scelerisque.</p>
+    <p class="text-gray-700">Fusce faucibus tellus vitae lectus porta, ac pharetra augue bibendum. Integer eget ex in eros malesuada.</p>
+  </div>
+  <div class="md:w-1/2 mt-8 md:mt-0 fade-in">
+    <img src="https://via.placeholder.com/500x350" alt="About image" class="rounded-xl shadow-lg parallax">
+  </div>
+</section>
 
-  <!-- FEATURE CARDS -->
-  <section class="bg-gray-50 py-20">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-12">Featured Products</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <div class="card bg-white p-6 rounded-xl fade-in">
-          <img src="https://via.placeholder.com/300x200" alt="" class="rounded-lg mb-4">
-          <h3 class="text-xl font-semibold mb-2">Product One</h3>
-          <p class="text-gray-600 mb-2">Lorem ipsum dolor sit amet.</p>
-          <span class="font-bold text-blue-600">₦5,000</span>
-        </div>
-        <div class="card bg-white p-6 rounded-xl fade-in">
-          <img src="https://via.placeholder.com/300x200" alt="" class="rounded-lg mb-4">
-          <h3 class="text-xl font-semibold mb-2">Product Two</h3>
-          <p class="text-gray-600 mb-2">Lorem ipsum dolor sit amet.</p>
-          <span class="font-bold text-blue-600">₦6,500</span>
-        </div>
-        <div class="card bg-white p-6 rounded-xl fade-in">
-          <img src="https://via.placeholder.com/300x200" alt="" class="rounded-lg mb-4">
-          <h3 class="text-xl font-semibold mb-2">Product Three</h3>
-          <p class="text-gray-600 mb-2">Lorem ipsum dolor sit amet.</p>
-          <span class="font-bold text-blue-600">₦7,200</span>
-        </div>
+<!-- FEATURED PRODUCTS CARDS -->
+<section class="bg-gray-50 py-20">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold mb-12">Featured Products</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div class="card bg-white p-6 rounded-xl fade-in">
+        <img src="https://via.placeholder.com/300x200" alt="" class="rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">Product One</h3>
+        <p class="text-gray-600 mb-2">Lorem ipsum dolor sit amet.</p>
+        <span class="counter" data-target="5000">₦0</span>
+      </div>
+      <div class="card bg-white p-6 rounded-xl fade-in">
+        <img src="https://via.placeholder.com/300x200" alt="" class="rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">Product Two</h3>
+        <p class="text-gray-600 mb-2">Lorem ipsum dolor sit amet.</p>
+        <span class="counter" data-target="6500">₦0</span>
+      </div>
+      <div class="card bg-white p-6 rounded-xl fade-in">
+        <img src="https://via.placeholder.com/300x200" alt="" class="rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">Product Three</h3>
+        <p class="text-gray-600 mb-2">Lorem ipsum dolor sit amet.</p>
+        <span class="counter" data-target="7200">₦0</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section class="py-20 bg-blue-600 text-white" id="contact">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-6">Get In Touch</h2>
-      <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <form class="space-y-4 max-w-lg mx-auto">
-        <input type="text" placeholder="Name" class="w-full p-3 rounded-lg text-gray-800">
-        <input type="email" placeholder="Email" class="w-full p-3 rounded-lg text-gray-800">
-        <textarea placeholder="Message" class="w-full p-3 rounded-lg text-gray-800"></textarea>
-        <button type="submit" class="bg-white text-blue-600 font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition">Send Message</button>
-      </form>
-    </div>
-  </section>
+<!-- CONTACT -->
+<section class="py-20 bg-blue-600 text-white" id="contact">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold mb-6">Get In Touch</h2>
+    <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <form class="space-y-4 max-w-lg mx-auto">
+      <input type="text" placeholder="Name" class="w-full p-3 rounded-lg text-gray-800">
+      <input type="email" placeholder="Email" class="w-full p-3 rounded-lg text-gray-800">
+      <textarea placeholder="Message" class="w-full p-3 rounded-lg text-gray-800"></textarea>
+      <button type="submit" class="bg-white text-blue-600 font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition">Send Message</button>
+    </form>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="bg-gray-900 text-gray-400 py-8 text-center">
-    <p>© <span id="year"></span> Tier 3 Business Template. All rights reserved.</p>
-    <div class="flex justify-center space-x-4 mt-4">
-      <a href="#" class="hover:text-white">Facebook</a>
-      <a href="#" class="hover:text-white">Instagram</a>
-      <a href="#" class="hover:text-white">WhatsApp</a>
-    </div>
-  </footer>
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-400 py-8 text-center">
+  <p>© <span id="year"></span> Tier 3 Pro Template. All rights reserved.</p>
+  <div class="flex justify-center space-x-4 mt-4">
+    <a href="#" class="hover:text-white">Facebook</a>
+    <a href="#" class="hover:text-white">Instagram</a>
+    <a href="#" class="hover:text-white">WhatsApp</a>
+  </div>
+</footer>
 
-  <script>
-    // Current year
-    document.getElementById('year').textContent = new Date().getFullYear();
+<script>
+  // Current year
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Fade-in on scroll
-    const faders = document.querySelectorAll('.fade-in');
-    const options = { threshold: 0.2 };
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, options);
-    faders.forEach(fader => observer.observe(fader));
-  </script>
+  // Fade-in on scroll
+  const faders = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.2 });
+  faders.forEach(fader => observer.observe(fader));
+
+  // Animated counters
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText.replace(/₦|,/g,'') || 0;
+      const increment = Math.ceil(target / 200);
+      if(count < target){
+        counter.innerText = `₦${count + increment}`;
+        setTimeout(updateCount, 20);
+      } else {
+        counter.innerText = `₦${target.toLocaleString()}`;
+      }
+    };
+    updateCount();
+  });
+</script>
 
 </body>
-  </html>
+                                                            </html>
